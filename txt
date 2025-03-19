@@ -1,0 +1,61 @@
+Ubuntu install of ROS Noetic
+Installation
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+sudo apt install curl 
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc 
+sudo apt-key add -
+sudo apt update
+
+sudo apt install ros-noetic-desktop-full
+
+echo "source /opt/ros/noetic/setup.bash" » ~/.bashrc
+
+source ~/.bashrc
+
+
+Installation package UR3
+
+sudo apt install ros-noetic-ur-robot-driver 
+sudo apt install ros-noetic-ur-description 
+sudo apt install ros-noetic-moveit
+
+
+
+Installation Gazebo
+
+sudo apt install gazebo11
+
+sudo apt install libgazebo11-dev
+
+sudo apt install python3-roslaunch
+
+
+sudo apt install ros-noetic-ur-gazebo 
+sudo apt install ros-noetic-ur3-moveit-config
+
+# sudo apt install ros-kinetic-gazebo-ros-pkgs 
+# sudo apt install ros-kinetic-gazebo-ros-control 
+# sudo apt install ros-noetic-ur-kinematics
+
+
+apt install ros-noetic-gazebo-ros-pkgs
+apt install ros-noetic-gazebo-ros-control
+
+
+mkdir -p ~/ur3_ws/src
+cd ~/ur3_ws/src
+# catkin_init_workspace
+catkin_make
+
+sudo apt install git
+git clone https://github.com/ros-industrial/ur_modern_driver.git
+# git clone https://github.com/ros-industrial/ur_moveit_config.git
+# git clone https://github.com/ros-industrial/ur_description.git
+
+
+roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true
+
+
+roslaunch ur_gazebo ur3.launch
+roslaunch ur_gazebo ur5.launch
