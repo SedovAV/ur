@@ -24,6 +24,6 @@ catkin build
 
 git clone https://github.com/cambel/ur_ikfast.git
 cd ur_ikfast
-sudo install python3-pip
+sudo apt install python3-pip
 pip3 install -e .
 
