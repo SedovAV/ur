@@ -28,3 +28,4 @@ cd ur_ikfast
 sudo apt install python3-pip
 pip3 install -e .
 
+sudo apt install python3-roslaunch
