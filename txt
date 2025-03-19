@@ -1,63 +1,29 @@
-Ubuntu install of ROS Noetic
-Installation
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
+
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt install curl 
 sudo curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add -
 sudo apt update
-
 sudo apt install ros-noetic-desktop-full
-
-mkdir -p ~/ur3_ws/src
-cd ~/ur3_ws/src
-# catkin_init_workspace
-sudo apt install catkin
-catkin_make
+mkdir -p ~/ros_ws/src
+cd ~/ros_ws/src
 sudo apt install git
-git clone https://github.com/ros-industrial/ur_modern_driver.git
-# git clone https://github.com/ros-industrial/ur_moveit_config.git
-# git clone https://github.com/ros-industrial/ur_description.git
+git clone https://github.com/cambel/ur3 ros_ur3
+cd ~/ros_ws
+rosinstall ~/ros_ws/src /opt/ros/noetic src/ros_ur3/dependencies.rosinstall
+sudo apt update
+sudo apt install python3-rosdep2
+rosdep fix-permissions
+sudo rosdep update
+sudo rosdep install --from-paths src --ignore-src --rosdistro=noetic -y
 
+cd ~/ros_ws/
+sudo apt install python3-catkin-tools python3-osrf-pycommon
+catkin build
 
+git clone https://github.com/cambel/ur_ikfast.git
+cd ur_ikfast
+sudo install python3-pip
+pip3 install -e .
 
-
-
-echo "source /opt/ros/noetic/setup.bash" » ~/.bashrc
-
-source ~/.bashrc
-
-
-Installation package UR3
-
-sudo apt install ros-noetic-ur-robot-driver 
-sudo apt install ros-noetic-ur-description 
-sudo apt install ros-noetic-moveit
-
-
-
-Installation Gazebo
-
-sudo apt install gazebo11
-
-sudo apt install libgazebo11-dev
-
-sudo apt install python3-roslaunch
-
-
-sudo apt install ros-noetic-ur-gazebo 
-sudo apt install ros-noetic-ur3-moveit-config
-
-# sudo apt install ros-kinetic-gazebo-ros-pkgs 
-# sudo apt install ros-kinetic-gazebo-ros-control 
-# sudo apt install ros-noetic-ur-kinematics
-
-
-apt install ros-noetic-gazebo-ros-pkgs
-apt install ros-noetic-gazebo-ros-control
-
-
-roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true
-
-
-roslaunch ur_gazebo ur3.launch
-roslaunch ur_gazebo ur5.launch
