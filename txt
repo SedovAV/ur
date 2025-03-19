@@ -29,3 +29,5 @@ sudo apt install python3-pip
 pip3 install -e .
 
 sudo apt install python3-roslaunch
+
+source path_to_my_workspace/workspace_name/devel/setup.bash
