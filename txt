@@ -17,6 +17,19 @@ sudo rosdep update
 sudo rosdep init
 sudo rosdep update
 
+mkdir -p ~/ros_ws/src
+cd ~/ros_ws/src
+catkin_create_pkg test --rosdistro ROSDISTRO
+cd test
+mkdir /launch   # not root
+mkdir /world    # not root   
+cd launch
+touch test.launch
+cd ..
+cd world
+touch mir.world
+
+
 ########################################################################################################################
 mkdir -p ~/ros_ws/src
 cd ~/ros_ws/src
