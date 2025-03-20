@@ -28,6 +28,10 @@ cd ur_ikfast
 sudo apt install python3-pip
 pip3 install -e .
 
+
+
+/bin/bash -c 'source /home/clover/catkin_ws/devel/setup.bash; roslaunch clover_simulation simulator.launch'
+
 sudo apt install python3-roslaunch
 
 source path_to_my_workspace/workspace_name/devel/setup.bash
