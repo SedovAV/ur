@@ -72,6 +72,9 @@ roslaunch test test.launch
 
 
 ########################################################################################################################
+
+https://github.com/cambel/ur3/tree/noetic-devel
+
 export GAZEBO_MODEL_PATH=~/ros_ws/src/test/models:${GAZEBO_MODEL_PATH}
 
 sdformat.org
