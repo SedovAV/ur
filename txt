@@ -72,6 +72,8 @@ roslaunch test test.launch
 
 
 ########################################################################################################################
+export GAZEBO_MODEL_PATH=~/ros_ws/src/test/models:${GAZEBO_MODEL_PATH}
+
 sdformat.org
 
 
