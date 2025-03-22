@@ -117,7 +117,7 @@ cd ~/catkin_ws/src
 git clone -b noetic-devel https://github.com/ros-industrial/universal_robot.git
 
 # Драйверы и утилиты
-git clone -b noetic-devel https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
+git clone https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
 git clone -b noetic-devel https://github.com/ros-industrial/ur_msgs.git
 
 # Пакет для интеграции с Gazebo
