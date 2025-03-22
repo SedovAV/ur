@@ -129,12 +129,13 @@ Copy
 sudo apt install ros-noetic-moveit ros-noetic-joint-state-controller ros-noetic-effort-controllers
 sudo apt install ros-noetic-gazebo-ros-control ros-noetic-ros-controllers
 rosdep update
+cd ~/catkin_ws
 rosdep install --from-paths src --ignore-src -r -y
 6. Сборка рабочего пространства
 
 bash
 Copy
-cd ~/catkin_ws
+# cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 7. Запуск симуляции в Gazebo
