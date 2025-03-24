@@ -1,3 +1,4 @@
+## 0. <a href="https://drive.google.com/file/d/1tyhFtulMPRBldcNUsnddQIRv0HSOLLNl/view?usp=sharing">Скачать дистрибутив ubuntu</a>
 # 1. Установка ROS
 
 Рекомендуется использовать ROS Noetic для Ubuntu 20.04 или ROS Melodic для Ubuntu 18.04.
