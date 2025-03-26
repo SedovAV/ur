@@ -231,3 +231,5 @@ source path_to_my_workspace/workspace_name/devel/setup.bash
 теперь заходим в папку catkin_ws и в теминале пишем catkin_make
 source devel/setup.bash
 roslauch name pusk.launch
+
+ <arg name="load_robot_description" default="true" />
